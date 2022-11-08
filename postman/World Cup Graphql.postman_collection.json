@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "977edea5-e0c4-4d06-a3ee-7958cbf93fda",
+		"name": "World Cup Graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14150484"
+	},
+	"item": [
+		{
+			"name": "Get all Players",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getAllUsers {\n  players {\n    id\n    name\n    position\n    age\n    internationalMatches\n    internationalGoals\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get player(s) by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getUsersByName($playerName: String) {\n  players( name: $playerName) {\n    id\n    name\n    age\n    position\n    internationalMatches\n    internationalGoals\n  }\n}",
+						"variables": "{\n  \"playerName\": \"Dusan\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single Player",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getSinglePlayer($playerId: Int!) {\n  player(id: $playerId) {\n    id\n    name\n    age\n    position\n    internationalMatches\n    internationalGoals\n  }\n}",
+						"variables": "{\n  \"playerId\": 1\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Player's clubs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getClubs($playerId: Int!) {\n  clubs(id: $playerId) {\n    player_id\n    name\n    year\n  }\n}",
+						"variables": "{\n  \"playerId\": 1\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Player with clubs data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getSinglePlayer($playerId: Int!) {\n  player(id: $playerId) {\n    id\n    name\n    age\n    position\n    internationalMatches\n    internationalGoals\n    clubs {\n        name\n        year\n    }\n  }\n}",
+						"variables": "{\n  \"playerId\": 1\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

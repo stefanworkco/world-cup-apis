@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "07622606-7d72-4a56-88e4-fc8423d8d480",
+		"name": "World Cup REST api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14150484"
+	},
+	"item": [
+		{
+			"name": "Sign in",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"password\",\n    \"email\" : \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all players",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "00000000-0000-0000-0000-000000000000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/players",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"players"
+					],
+					"query": [
+						{
+							"key": "position",
+							"value": "DC",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Dusan",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single player",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "00000000-0000-0000-0000-000000000000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/players/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"players",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User's clubs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "00000000-0000-0000-0000-000000000000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/players/1/clubs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"players",
+						"1",
+						"clubs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello World",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "00000000-0000-0000-0000-000000000000",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		}
+	]
+}
