@@ -14,10 +14,20 @@ To run REST api application, just type in the root of the project
 node app.js
 ```
 
-To run GRAPHQL api application, just type in the root of the project
+It will run the app with REST APIs on 
+```
+http://localhost:3001
+```
 
+
+To run GRAPHQL api application, just type in the root of the project
 ```
 node app2.js
+```
+
+It will run the app with Graphql APIs on 
+```
+http://localhost:3002
 ```
 
 ### REST API info
